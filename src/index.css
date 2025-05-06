@@ -1,0 +1,34 @@
+@import "tailwindcss";
+/* Add this to your custom CSS or a Tailwind extension file */
+.body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0%;
+    justify-content: center;
+}
+
+.primebgcolor{
+    background-color: #314B8C;
+}
+
+.btnprimecolor{
+    background-color: rgb(246, 174, 57);
+}
+
+@keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee {
+    animation: marquee 20s linear infinite;
+  }
+
+  .steak{
+    background-color: rgb(164, 164, 212);
+  }
