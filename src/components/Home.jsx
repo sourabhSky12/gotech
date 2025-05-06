@@ -1,9 +1,9 @@
 import { useState } from "react";
 import StaffAug from "./ourServices/StaffAug";
 import ItConsulting from "./ourServices/ItConsulting";
-import CustomSoftware from "./ourServices/customSoftware";
-import IntelAuto from "./ourServices/intelAuto";
-import ManagedIt from "./ourServices/managedIt";
+import CustomSoftware from "./ourServices/CustomSoftware";
+import IntelAuto from "./ourServices/IntelAuto";
+import ManagedIt from "./ourServices/ManagedIt";
 import BackEnd from "./techstack/BackEnd";
 import FrontEnd from "./techstack/FrontEnd";
 import MobileApp from "./techstack/MobileApp";
