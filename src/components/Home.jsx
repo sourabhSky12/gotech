@@ -9,9 +9,20 @@ import FrontEnd from "./techstack/FrontEnd";
 import MobileApp from "./techstack/MobileApp";
 
 import UiUx from "./techstack/UiUx";
-import { styled } from "@mui/material";
+
 import BlueForm from "./BlueForm";
 import BluePart from "./BluePart";
+import ContactSection from "./ContactSection";
+import StatsSection from "./StatsSection";
+import BlueCardServices from "./pages/Services/BlueCardServices";
+import IndustriesServed from "./pages/IndustriesServed";
+import AboutCompany from "./pages/company/AboutCompany";
+import ProductRoadmap from "./pages/industries/ProductRoadmap";
+import PhpServices from "./pages/techstackk/PhpServices";
+import SoftwareProvide from "./pages/industries/SoftwareProvide";
+import CountUp from "react-countup";
+import ServicesStartCount from "./pages/Services/ServicesStartCount";
+
 
 function Home() {
   const ImageIcon = ({ path, text }) => {
@@ -100,7 +111,7 @@ function Home() {
     <div className="flex flex-col lg:flex-row mt-12 pl-4 w-full lg:px-40 overflow-hidden  ">
   {/* Text + Button + Stats */}
   <div className="flex-1 flex flex-col  ">
-    <div className="mb-6 pl-25 lg:pl-0">
+    <div className="mb-6 pl-10 lg:pl-0">
       <h1 className="text-4xl sm:text-5xl text-[#405EA9] font-bold">SOFTWARE</h1>
       <h1 className="text-4xl sm:text-5xl text-[#405EA9] font-bold">DEVELOPMENT</h1>
       <h1 className="text-4xl sm:text-5xl text-[#405EA9] font-bold">COMPANY</h1>
@@ -114,14 +125,16 @@ function Home() {
       </p>
     </div>
 
-    <div className="mt-6">
-      <button
+    <div className="pt-6 flex justify-center sm:justify-start">
+      <button onClick={() => setShowModal(true)}
         type="button"
-        className="focus:outline-none  text-white  bg-[#ED8628] hover:bg-[#FFDBA1] focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-base px-8 py-4 dark:focus:ring-yellow-900"
+        className="focus:outline-none  text-white  bg-[#ED8628] hover:bg-[#FFDBA1] focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-base px-8 py-4 dark:focus:ring-yellow-900 w-100 sm:w-50 "
       >
         <b>GET IN TOUCH</b>
       </button>
     </div>
+
+    
 
     {/* Stats Cards */}
     <div className="flex flex-row sm:flex-row justify-between text-center mt-8 gap-6 sm:gap-0">
@@ -230,7 +243,7 @@ function Home() {
       </div>
 
       {/* Ready to start Your digital Journey */}
-
+      {/*  
       <div class="flex justify-center items-center mt-10 pt-10 ">
         <div class="flex-1/2 pl-40">
           <h1 class="text-3xl text-blue-900">
@@ -360,9 +373,137 @@ function Home() {
           </div>
         )}
       </div>
+       */}
+
+
+<div className="flex flex-col md:flex-row items-center justify-between mt-10 px-6 md:px-20 lg:px-40">
+  <div className="md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+    <h1 className="text-2xl md:text-3xl text-blue-900 font-semibold">
+      READY TO START YOUR DIGITAL TRANSFORMATION JOURNEY?
+    </h1>
+    <p className="text-base md:text-lg text-blue-900 mt-3">
+      With our innovative and industry-proven services, we’ll help you
+      unlock new growth opportunities.
+    </p>
+  </div>
+
+  <div className="md:w-1/2 flex justify-center md:justify-end">
+    <div
+      onClick={() => setShowModal(true)}
+      className="bg-[#ED8628] text-base md:text-lg text-white w-48 h-14 rounded-xl flex items-center justify-center gap-2 hover:bg-[#FFDBA1] cursor-pointer transition"
+    >
+      <span>GET INFO</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3"
+        />
+      </svg>
+    </div>
+  </div>
+
+  {showModal && (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
+      <div className="bg-white rounded-lg w-full max-w-7xl relative">
+        <button
+          onClick={() => setShowModal(false)}
+          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 p-2"
+        >
+          <img src="xicon.png" alt="xicon" />
+        </button>
+        <div className="flex flex-col md:flex-row">
+          <div className="md:w-3/5 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold mb-4 text-blue-900">
+              BOOKING A CALL
+            </h2>
+            <p className="text-base md:text-lg text-[#405EA9]">
+              Give us a call today to discuss how we can bring your vision
+              to life with our expert solutions!
+            </p>
+            <form className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-5">
+              <input
+                type="text"
+                placeholder="Full Name *"
+                className="border border-gray-300 focus:border-[#17A8E3] focus:outline-none rounded-md p-2"
+              />
+              <input
+                type="email"
+                placeholder="Email address *"
+                className="border border-gray-300 focus:border-[#17A8E3] focus:outline-none rounded-md p-2"
+              />
+              <input
+                type="text"
+                placeholder="Phone number (optional)"
+                className="border border-gray-300 focus:border-[#17A8E3] focus:outline-none rounded-md p-2"
+              />
+              <input
+                type="text"
+                placeholder="Company name (optional)"
+                className="border border-gray-300 focus:border-[#17A8E3] focus:outline-none rounded-md p-2"
+              />
+              <textarea
+                placeholder="How can we help you? *"
+                className="md:col-span-2 border border-gray-300 focus:border-[#17A8E3] focus:outline-none rounded-md p-2 h-24"
+              ></textarea>
+              <button
+                type="submit"
+                className="bg-[#ED8628] text-white py-2 px-4 rounded-md hover:bg-[#FFDBA1] transition"
+              >
+                SEND
+              </button>
+            </form>
+          </div>
+
+          <div className="md:w-2/5 bg-[#405EA9] p-6 md:p-8 text-white">
+            <h1 className="text-xl font-bold">TELL US ABOUT YOUR NEEDS</h1>
+            <p className="text-base pt-4">
+              Just fill out the form or contact us via email or phone
+            </p>
+
+            <div className="flex gap-4 pt-6 items-center">
+              <img src="email.png" alt="email" className="w-5 h-5" />
+              <div className="text-[#ED8628] font-semibold hover:underline cursor-pointer">
+                career@go-techsolution.com
+              </div>
+            </div>
+
+            <div className="flex gap-4 pt-4 items-center">
+              <img src="phone.png" alt="phone" className="w-5 h-5" />
+              <div className="text-[#ED8628] font-semibold hover:underline cursor-pointer">
+                +91-8769365375
+              </div>
+            </div>
+
+            <div className="flex gap-4 pt-4 items-start">
+              <img src="location.png" alt="location" className="w-6 h-6 mt-1" />
+              <div className="text-[#ED8628] font-semibold">
+                512-517, 5th floor, Amrit Shree, University Road, Udaipur,
+                Rajasthan 313001
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
+
+
+      {/* Blue Part */}
+
+      <BluePart /> 
+
 
       {/*TECH STACK */}
-
+     {/*   
       <div class="px-40 mt-20 ">
         <h1 class="text-3xl text-blue-900">
           <b>TECH STACK</b>
@@ -389,13 +530,55 @@ function Home() {
         <br></br>
         {selectedStack}
       </div>
+      */}
 
-      {/* Blue Part */}
+<div className="px-4 md:px-20 mt-10 md:mt-20 lg:px-40">
+  <h1 className="text-2xl md:text-3xl text-blue-900 font-bold">
+    TECH STACK
+  </h1>
 
-      <BluePart />
+  <div className="mt-6 flex flex-wrap gap-4 text-lg md:text-xl text-blue-900 cursor-pointer lg:justify-between">
+    {stacklist.map((star) => (
+      <div
+        key={star.title}
+        onClick={() => handleStackClick(star)}
+        className="hover:underline"
+      >
+        <h1 className="font-semibold">{star.title}</h1>
+      </div>
+    ))}
+  </div>
+
+  <div className="mt-10">
+    {selectedStack}
+  </div>
+</div>
+
+
+   <ContactSection/>
 
       {/*Form */}
-      <BlueForm />
+      <BlueForm /> 
+    
+    {/*other pages component*/}
+        
+      <StatsSection/>
+     
+      
+      <BlueCardServices/>
+        
+      
+      <IndustriesServed/>
+      
+     <AboutCompany/>
+
+     <ProductRoadmap/>
+    <PhpServices/>
+    
+    <SoftwareProvide/>
+
+    <ServicesStartCount/>
+
     </>
   );
 }
